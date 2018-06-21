@@ -20,7 +20,7 @@ class CreateTableOrders extends Migration
             $table->enum('type', ['order','sewing']);
             $table->varchar('name', 255);
             $table->varchar('city', 255);
-            $table->DATETIME('date')->nullable();
+            $table->dateTime('date')->nullable();
             $table->varchar('shipper', 255)->nullable();
             $table->varchar('phone', 255)->nullable();
             $table->varchar('shopping_center', 255)->nullable();
@@ -28,15 +28,15 @@ class CreateTableOrders extends Migration
             $table->varchar('contact_name', 255)->nullable();
             $table->varchar('device_prefix', 255)->nullable();
             $table->text('comment', 255);
-            $table->DATETIME('pickup_date')->nullable();
+            $table->dateTime('pickup_date')->nullable();
             $table->varchar('deposit', 10);
-            $table->DATETIME('nextcall_date')->nullable();
+            $table->dateTime('nextcall_date')->nullable();
             $table->enum('currency', ['rur','cny', 'usd']);
-            $table->tinyInt('syncStatus', 1)->default(0);
-            $table->tinyInt('extSyncStatus', 1)->default(0);
-            $table->DATETIME('lastSync')->nullable();
-            $table->DATETIME('lastSync1C')->nullable();
-            $table->tinyInt('ready', 1)->default(0);
+            $table->tinyInteger('syncStatus', 1)->default(0);
+            $table->tinyInteger('extSyncStatus', 1)->default(0);
+            $table->dateTime('lastSync')->nullable();
+            $table->dateTime('lastSync1C')->nullable();
+            $table->tinyInteger('ready', 1)->default(0);
             $table->timestamps();
         });
     }

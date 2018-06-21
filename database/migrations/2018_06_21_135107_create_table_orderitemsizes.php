@@ -15,10 +15,11 @@ class CreateTableOrderitemsizes extends Migration
     {
         Schema::create('orderitemsizes', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('item_id', 255)->unsigned();
             $table->varchar('name', 255);
             $table->varchar('size', 255)->nullable();
             $table->integer('quantity')->unsigned();
-            $table->tinyinteger('completed', 1)->default(0);
+            $table->tinyInteger('completed', 1)->default(0);
             $table->timestamps();
         });
     }
