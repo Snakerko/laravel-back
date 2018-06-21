@@ -16,8 +16,9 @@ class CreateTableOrderitemsizes extends Migration
         Schema::create('orderitemsizes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('item_id', 255)->unsigned();
+            $table->foreign('item_id')->references('id')->on('order_items');
             $table->varchar('name', 255);
-            $table->varchar('size', 255)->nullable();
+            $table->varchar('size', 255);
             $table->integer('quantity')->unsigned();
             $table->tinyInteger('completed', 1)->default(0);
             $table->timestamps();
