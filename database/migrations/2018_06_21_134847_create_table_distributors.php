@@ -17,13 +17,13 @@ class CreateTableDistributors extends Migration
             $table->increments('id');
             $table->char('guid', 36)->nullable();
             $table->char('name', 255);
-            $table->varchar('city', 255)->nullable();
-            $table->varchar('address', 255)->nullable();
-            $table->varchar('phone', 255)->nullable();
-            $table->varchar('shopping_center', 255)->nullable();
-            $table->varchar('section', 255)->nullable();
-            $table->varchar('contact_name', 255)->nullable();
-            $table->varchar('synonyms', 1000)->nullable();
+            $table->string('city', 255)->nullable();
+            $table->string('address', 255)->nullable();
+            $table->string('phone', 255)->nullable();
+            $table->string('shopping_center', 255)->nullable();
+            $table->string('section', 255)->nullable();
+            $table->string('contact_name', 255)->nullable();
+            $table->string('synonyms', 1000)->nullable();
             $table->timestamps();
         });
     }

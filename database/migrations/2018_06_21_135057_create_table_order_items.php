@@ -13,20 +13,20 @@ class CreateTableOrderitems extends Migration
      */
     public function up()
     {
-        Schema::create('orderitems', function (Blueprint $table) {
+        Schema::create('order_items', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('order_id')->unsigned();
             $table->foreign('order_id')->references('id')->on('orders');
-            $table->varchar('name', 255);
-            $table->varchar('brand', 255);
-            $table->varchar('sku', 255);
-            $table->varchar('color', 255);
-            $table->varchar('purchase_price', 10);
-            $table->varchar('sell_price', 10);
+            $table->string('name', 255);
+            $table->string('brand', 255);
+            $table->string('sku', 255);
+            $table->string('color', 255);
+            $table->string('purchase_price', 10);
+            $table->string('sell_price', 10);
             $table->text('comment')->nullable();
-            $table->varchar('composition', 255);
-            $table->varchar('img', 255)->nullable();
-            $table->varchar('care_symbols', 255);
+            $table->string('composition', 255);
+            $table->string('img', 255)->nullable();
+            $table->string('care_symbols', 255);
             $table->integer('order');
             $table->timestamps();
         });

@@ -17,7 +17,7 @@ class CreateTableSizes extends Migration
             $table->increments('id');
             $table->char('guid', 36)->nullable();
             $table->char('name', 255);
-            $table->varchar('synonyms', 1000)->nullable();
+            $table->string('synonyms', 1000)->nullable();
             $table->timestamps();
         });
     }
