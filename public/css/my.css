@@ -1,0 +1,70 @@
+.uform {
+	margin-top: 150px;
+	margin-bottom: 50px;
+}
+
+.main-menu *{
+	margin: 0;
+	padding: 0;
+}
+
+.main-menu ul,
+.main-menu ol{
+	list-style: none;
+}
+
+.main-menu > ul{
+	display: flex;
+	justify-content: center;
+}
+
+.main-menu > ul li a{
+	display: block;
+	background: #ececed;
+	padding: 15px 30px 15px 40px;
+	font-size: 14px;
+	color: #454547;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all 0.3s ease;
+}
+
+.main-menu > ul li{
+	position: relative;
+	border-right: 1px solid #c7c8ca;
+}
+
+.main-menu > ul li:first-child{
+	border-left: 1px solid #b2b3b5;
+}
+
+.main-menu > ul li:last-child{
+	border-right: 1px solid #b2b3b5;
+}
+
+.main-menu li a:hover{
+	background: #454547;
+	color: #ffffff;
+	box-shadow: 1px 5px 10px -5px black;
+	transition: all 0.3s ease;
+}
+
+.main-menu li ul{
+	position: absolute;
+	min-width: 150px;
+	display: none;
+}
+
+.main-menu li > ul li{
+	border: 1px solid #c7c8ca;
+}
+
+.main-menu li > ul li a{
+	padding: 0;
+	text-transform: none;
+	background: #e4e4e5;
+}
+
+.main-menu li:hover > ul{
+	display: block;
+}
