@@ -9,8 +9,8 @@
 			<li><a href="/dict/size">Размеры</a></li>
 		</ul>
   	</li>
-  	<li><a href=""></i>Заказы</a></li>
-  	<li><a href=""></i>Отчет</a></li>
+  	<li><a href="">Заказы</a></li>
+  	<li><a href="">Отчет</a></li>
   	<li><a href="">Галерея</a></li>
   	<li><a href="">Отборы</a></li>
   	<li><a href="">Лог</a></li>

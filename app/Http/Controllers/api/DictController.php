@@ -44,10 +44,10 @@ class DictController extends Controller
         if($request->isMethod('post')) {
             $dict->save();
             //store
-            return back();
+            return $dict;
         }
         //index
-        return view('site.dict', ['items' => $items, 'page' => $page]);
+        return ['items' => $items, 'page' => $page]);
 
     }
 
@@ -80,16 +80,16 @@ class DictController extends Controller
         if($request->isMethod('delete')) {
             $dict->delete();
             //delete
-            return back();
+            return '';
         }
         if($request->isMethod('post')) {
             $input = $request->toArray();
             $dict->fill($input);
             $dict->save();
             //update
-            return redirect()->route('dict', ['page' => $page]);
+            return $dict;
         }
         $old = $dict;
-        return view('site.dict', ['items' => $items, 'page' => $page, 'old' => $old]);
+        return ['items' => $items, 'page' => $page, 'old' => $old]);
     }
 }

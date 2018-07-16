@@ -17,7 +17,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/my.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <!-- header -->
@@ -30,9 +29,6 @@
 
     @yield('content')
 
-    <script type="text/javascript" src="{{ asset ('js/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('js/bootstrap.js') }}"></script>
-    <script type="text/javascript" src="{{ asset ('js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset ('js/app.js') }}"></script>
 </body>
 </html>

@@ -16,5 +16,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::group(['prefix' => '/api', 'namespace' => 'Api\\', 'as' => 'api.'], function () {
+    Route::match(['get', 'post'], '/dict/{page}', ['uses' => 'DictController@execute', 'as' => 'dict']);
+	Route::match(['get', 'post', 'delete'], '/dict/{page}/{id}', ['uses' => 'DictController@editing', 'as' => 'dictEdit']);
+});
+
 
 
