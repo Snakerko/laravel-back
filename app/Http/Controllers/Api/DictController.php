@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Color;
 use App\Brand;
 use App\Distributor;
@@ -15,23 +16,23 @@ class DictController extends Controller
     public function execute(Request $request, $page) {
     	switch ($page) {
     		case 'color':
-    			$items = Color::paginate(15);
+    			$items = Color::all();
                 $dict = new Color(['name' => $request->name]);
     			break;
     		case 'brand':
-    			$items = Brand::paginate(15);
+    			$items = Brand::all();
                 $dict = new Brand(['name' => $request->name]);
     			break;
     		case 'distributor':
-    			$items = Distributor::paginate(15);
+    			$items = Distributor::all();
                 $dict = new Distributor(['name' => $request->name]);
     			break;
     		case 'size':
-    			$items = Size::paginate(15);
+    			$items = Size::all();
                 $dict = new Size(['name' => $request->name]);
     			break;
     		case 'season':
-    			$items = Season::paginate(15);
+    			$items = Season::all();
                 $dict = new Season(['name' => $request->name]);
     			break;    		
     		default:
@@ -39,7 +40,7 @@ class DictController extends Controller
     			break;
     	}
         /*$className = app(ucfirst($page));
-        $items = $className::paginate(15);
+        $items = $className::all();
         $dict = new $className(['name' => $request->name]);*/
         if($request->isMethod('post')) {
             $dict->save();
@@ -47,7 +48,7 @@ class DictController extends Controller
             return $dict;
         }
         //index
-        return ['items' => $items, 'page' => $page]);
+        return ['items' => $items, 'page' => $page];
 
     }
 
@@ -90,6 +91,6 @@ class DictController extends Controller
             return $dict;
         }
         $old = $dict;
-        return ['items' => $items, 'page' => $page, 'old' => $old]);
+        return ['items' => $items, 'page' => $page, 'old' => $old];
     }
 }

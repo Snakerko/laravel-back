@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<bucket>
+		<item>
+			<sku>1111</sku>
+			<qty>3</qty>
+		</item>
+		<item>
+			<sku>2222</sku>
+			<qty>1</qty>
+		</item>
+		<item>
+			<sku>3333</sku>
+			<qty>7</qty>
+		</item>
+	</bucket>
+</template>
